@@ -19,7 +19,7 @@ export default class Header extends Component {
                     <SubTitle>Assista onde quiser. Cancele quando quiser.</SubTitle>
                     <Link className="main-offer-btn" to="/home">
                         Assine Agora
-                        <Icon icon={ic_navigate_next} size={37} />
+                        <Icon icon={ic_navigate_next} size={30} />
                     </Link>
                 </div>
             </HeaderComponent>
@@ -71,19 +71,25 @@ const HeaderComponent = styled.div`
         text-transform: upprcase;
         border: none;
         outline: none;
-        margin: 0 33%;
-        padding: 1.5rem;
+        margin: 0 auto;
+        padding: 1rem;
         border-radius: 0.1875rem;
         font-size: 2rem;
         text-align: center;
         box-shadow: 0 1px 0 rgba(0,0,0,0.45);
         transition: background 0.2s ease-in;
         cursor: pointer;
-        &:hover {
-            background: var(--main-red-hover);
-        }
+        width: 30%;
     }
 
+    @media only screen and (max-width: 800px) {
+        .main-offer-btn{
+            font-size: 1rem;
+            width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+      }
 
 `;
 
@@ -92,6 +98,12 @@ const Title = styled.h1`
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.1em;
+
+    @media only screen and (max-width: 600px) {
+        {
+          font-size: 2rem;
+        }
+      }
 `;
 
 const SubTitle = styled.h2`
@@ -100,4 +112,10 @@ const SubTitle = styled.h2`
     line-height: 1.25em;
     margin 0 0 1.875rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: 600px) {
+        {
+          font-size: 1rem;
+        }
+      }
 `;
